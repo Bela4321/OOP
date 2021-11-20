@@ -42,9 +42,8 @@ public class Zettel04_1 {
         }
         //b)
         public static void main(String[] args) {
-        showBillboard("Testing your own code is important");
+        showBillboard("Testing your own code is important!");
         showBillboard("Testing your program with all kinds of different input values is important!");
-        showBillboard("");
         showBillboard("");
         showBillboard("Der Teig fuer die meisten Ramen besteht aus den Grundbestandteilen Weizenmehl, Salz und Wasser und Kansui (alkalisches Wasser). Der Zusatz Kansui, bestehend aus einem hohen Anteil an Kaliumcarbonat und Natriumcarbonat sowie Spuren von Phosphorsaeure, verleiht den Nudeln ihre spezielle gelbliche Farbe und ihren spezifischen Geschmack. Teilweise werden auch Eier anstatt Kansui verwendet, es gibt aber auch Nudeln ganz ohne Kansui und Eier. Insgesamt werden vier Grundtypen unterschieden: Kansomen (getrocknete Ramen), Namamen (frische Ramen), Mushimen (gedämpfte Ramen) sowie Insutanto Ramen (Instantramen). Waehrend die frischen Ramen moeglichst am Herstellungstag verwendet oder nur kurz im Kuehlschrank gelagert werden sollten, sind Instantramen zum Teil mehrere Monate lagerfaehig. Ramen gibt es in verschiedene Formen, wie beispielsweise als dicke oder duenne Nudeln, als lange und kurze Nudeln, oder auch als glatte, verknaeuelte, bandartige Nudelform.");
     }
