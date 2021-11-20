@@ -1,3 +1,5 @@
+package Zettel04;
+
 public class Zettel04_2 {
     static String toBinary(int n) {
         if (n<0) {

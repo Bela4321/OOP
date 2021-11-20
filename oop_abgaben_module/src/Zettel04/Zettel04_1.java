@@ -1,3 +1,5 @@
+package Zettel04;
+
 public class Zettel04_1 {
 
         //a)
