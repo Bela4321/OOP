@@ -5,8 +5,89 @@ import java.util.Arrays;
 public class Aufgabe5_1 {
     static void testAll() {
         boolean test_result;
-        //getMinimum test
 
+        //getMinimum test
+        float[] testSubject1={1.4f,3.6f,4.3f,4.91f};
+        float expectedResult= 1.4f;
+        if (Math.abs(expectedResult-getMinimum(testSubject1))<0.000001) {
+            System.out.println("getMinimum test 1 passed");
+        } else {
+            System.out.println("getMinimum test 1 failed");
+            System.out.println("Expected: "+expectedResult+"  Actual: "+getMinimum(testSubject1));
+        }
+        float[] testSubject2 = {10.f,4.6f,2.1f,1.112f};
+        expectedResult= 1.112f;
+        if (Math.abs(expectedResult-getMinimum(testSubject2))<0.000001) {
+            System.out.println("getMinimum test 2 passed");
+        } else {
+            System.out.println("getMinimum test 2 failed");
+            System.out.println("Expected: "+expectedResult+"  Actual: "+getMinimum(testSubject2));
+        }
+
+        //getMaximum test
+        float[] testSubject3={1.4f,3.6f,4.3f,4.91f};
+        expectedResult= 4.91f;
+        if (Math.abs(expectedResult-getMaximun(testSubject3))<0.000001) {
+            System.out.println("getMaximum test 1 passed");
+        } else {
+            System.out.println("getMaximum test 1 failed");
+            System.out.println("Expected: "+expectedResult+"  Actual: "+getMaximun(testSubject3));
+        }
+        float[] testSubject4 = {10.f,4.6f,2.1f,1.112f};
+        expectedResult= 10.f;
+        if (Math.abs(expectedResult-getMaximun(testSubject4))<0.000001) {
+            System.out.println("getMaximum test 2 passed");
+        } else {
+            System.out.println("getMaximum test 2 failed");
+            System.out.println("Expected: "+expectedResult+"  Actual: "+getMaximun(testSubject4));
+        }
+
+        //calculate Average test
+        float[] testSubject5={1.4f,3.6f,4.3f,4.91f};
+        expectedResult= 3.5525f;
+        if (Math.abs(expectedResult-calculateAverage(testSubject5))<0.000001) {
+            System.out.println("calculateAverage test 1 passed");
+        } else {
+            System.out.println("calculateAverage test 1 failed");
+            System.out.println("Expected: "+expectedResult+"  Actual: "+calculateAverage(testSubject5));
+        }
+        float[] testSubject6 = {10.f,4.6f,2.1f,1.112f};
+        expectedResult= 4.453f;
+        if (Math.abs(expectedResult-calculateAverage(testSubject6))<0.000001) {
+            System.out.println("calculateAverage test 2 passed");
+        } else {
+            System.out.println("calculateAverage test 2 failed");
+            System.out.println("Expected: "+expectedResult+"  Actual: "+calculateAverage(testSubject6));
+        }
+
+        //isSorted test
+        float[] testSubject7={1.4f,3.6f,4.3f,4.91f};
+        boolean ascendingTest = true;
+        boolean expectedResultbool= true;
+        if (!(isSorted(testSubject7,ascendingTest) ^ expectedResultbool)) {
+            System.out.println("isSorted test 1 passed");
+        } else {
+            System.out.println("isSorted test 1 failed");
+            System.out.println("Expected: "+expectedResultbool+"  Actual: "+isSorted(testSubject7,ascendingTest));
+        }
+        float[] testSubject8 = {10.f,4.6f,2.1f,1.112f};
+        ascendingTest = false;
+        expectedResultbool= true;
+        if (isSorted(testSubject8, ascendingTest)==expectedResultbool) {
+            System.out.println("isSorted test 2 passed");
+        } else {
+            System.out.println("isSorted test 2 failed");
+            System.out.println("Expected: "+expectedResultbool+"  Actual: "+isSorted(testSubject8,ascendingTest));
+        }
+        float[] testSubject9 = {2.5f,10.f,3.14534f,2.1f,1.112f};
+        ascendingTest = false;
+        expectedResultbool= false;
+        if (isSorted(testSubject9, ascendingTest)==expectedResultbool) {
+            System.out.println("isSorted test 3 passed");
+        } else {
+            System.out.println("isSorted test 3 failed");
+            System.out.println("Expected: "+expectedResultbool+"  Actual: "+isSorted(testSubject9,ascendingTest));
+        }
     }
 
     static float getMinimum(float[] numbers) {
@@ -60,10 +141,7 @@ public class Aufgabe5_1 {
     }
 
     public static void main(String[] args) {
-        float[] test = {1.4f,3.6f,4.3f,4.9f};
-        System.out.println(getMinimum(test));
-        System.out.println(getMaximun(test));
-        System.out.println(calculateAverage(test));
-        System.out.println(isSorted(test,true));
+        testAll();
+
     }
 }
