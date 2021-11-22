@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 public class Aufgabe5_1 {
     static void testAll() {
-        boolean test_result;
-
         //getMinimum test
         float[] testSubject1={1.4f,3.6f,4.3f,4.91f};
         float expectedResult= 1.4f;
@@ -64,7 +62,7 @@ public class Aufgabe5_1 {
         float[] testSubject7={1.4f,3.6f,4.3f,4.91f};
         boolean ascendingTest = true;
         boolean expectedResultbool= true;
-        if (!(isSorted(testSubject7,ascendingTest) ^ expectedResultbool)) {
+        if (isSorted(testSubject7,ascendingTest) == expectedResultbool) {
             System.out.println("isSorted test 1 passed");
         } else {
             System.out.println("isSorted test 1 failed");
