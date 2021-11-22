@@ -3,6 +3,12 @@ package Zettel05;
 import java.util.Arrays;
 
 public class Aufgabe5_1 {
+    static void testAll() {
+        boolean test_result;
+        //getMinimum test
+
+    }
+
     static float getMinimum(float[] numbers) {
         if (numbers.length==1) {
             return numbers[0];
