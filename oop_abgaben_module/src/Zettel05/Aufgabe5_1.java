@@ -25,19 +25,19 @@ public class Aufgabe5_1 {
         //getMaximum test
         float[] testSubject3={1.4f,3.6f,4.3f,4.91f};
         expectedResult= 4.91f;
-        if (Math.abs(expectedResult-getMaximun(testSubject3))<0.000001) {
+        if (Math.abs(expectedResult-getMaximum(testSubject3))<0.000001) {
             System.out.println("getMaximum test 1 passed");
         } else {
             System.out.println("getMaximum test 1 failed");
-            System.out.println("Expected: "+expectedResult+"  Actual: "+getMaximun(testSubject3));
+            System.out.println("Expected: "+expectedResult+"  Actual: "+getMaximum(testSubject3));
         }
         float[] testSubject4 = {10.f,4.6f,2.1f,1.112f};
         expectedResult= 10.f;
-        if (Math.abs(expectedResult-getMaximun(testSubject4))<0.000001) {
+        if (Math.abs(expectedResult-getMaximum(testSubject4))<0.000001) {
             System.out.println("getMaximum test 2 passed");
         } else {
             System.out.println("getMaximum test 2 failed");
-            System.out.println("Expected: "+expectedResult+"  Actual: "+getMaximun(testSubject4));
+            System.out.println("Expected: "+expectedResult+"  Actual: "+getMaximum(testSubject4));
         }
 
         //calculate Average test
@@ -100,7 +100,7 @@ public class Aufgabe5_1 {
         }
     }
 
-    static float getMaximun(float[] numbers) {
+    static float getMaximum(float[] numbers) {
         float maximum = numbers[0];
         for (float number:numbers) {
             if (number> maximum) {
