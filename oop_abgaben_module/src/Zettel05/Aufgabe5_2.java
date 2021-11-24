@@ -1,5 +1,5 @@
 package Zettel05;
-
+//moin moin
 import java.util.Arrays;
 
 public class Aufgabe5_2 {
