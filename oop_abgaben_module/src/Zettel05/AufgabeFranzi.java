@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class AufgabeFranzi {
 
-    //a)
-    void testAll() {
+    //1_a)
+    static void testAll() {
         float [] numbers = { -4, 0, 2, 6, 10, 23};
-        boolean ascending = true
+        boolean ascending = true;
         if (getMinimum(numbers) == -4) {
             System.out.println(getMinimum(numbers) + " is the right minimum.");
         } if (getMinimum(numbers) != -4) {
@@ -16,17 +16,17 @@ public class AufgabeFranzi {
             System.out.println(getMaximum(numbers) + " is the right maximum.");
         } if (getMaximum(numbers) != 23) {
             System.out.println("The right answer would have been 23. Your answer was: " + getMaximum(numbers));
-        } if (calculateAverage(numbers) == 37/2) {
+        } if (calculateAverage(numbers) == (float) 37/2) {
             System.out.println(calculateAverage(numbers) + " is the right average.");
-        } if (calculateAverage(numbers) != 37/2) {
+        } if (calculateAverage(numbers) != (float) 37/2) {
             System.out.println("The right answer would have been " + 37/6 + " Your answer was: " + calculateAverage(numbers));
         } if (isSorted(numbers, ascending) == true) {
-            System.out.println("It's sorted ascending.");
+            System.out.println("It's sorted ascending. Your guess was correct.");
         } if (isSorted(numbers, ascending) == false) {
             System.out.println("The right answer would have been ascending. Your answer was descending.");
         }
     }
-    //b)
+    //1_b)
     static float getMinimum(float [] numbers) {
         float minimum = numbers[0];
         for (float elem : numbers) {
@@ -37,8 +37,7 @@ public class AufgabeFranzi {
         return minimum;
     }
 
-    //c)
-    import java.util.Arrays;
+    //1_c)
     static float getMaximum (float[] numbers) {
         float length = numbers.length;
         if (length == 1) {
@@ -52,7 +51,7 @@ public class AufgabeFranzi {
         }
     }
 
-    //d)
+    //1_d)
     static float calculateAverage(float [] numbers) {
         int i = 0;
         float sum = 0.0f;
@@ -62,7 +61,7 @@ public class AufgabeFranzi {
         }
         return sum/ numbers.length;
     }
-    //e)
+    //1_e)
     static boolean isSorted(float [] numbers, boolean ascending) {
         boolean result = true;
         if (ascending) {
@@ -82,7 +81,6 @@ public class AufgabeFranzi {
     }
 
     public static void main(String[] args){
-        float [] testingNumbers = {4.0f, 10.0f, 3.0f, 1.0f, 30.0f};
-        System.out.println(getMaximum( testingNumbers));
+        testAll();
     }
 }
