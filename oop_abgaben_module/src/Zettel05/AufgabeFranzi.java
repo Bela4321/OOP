@@ -160,8 +160,7 @@ static double distance (double [] gps) {
             }
             if (coverageCount==3) {
                 endGPS=k;
-                //damit wir sobald wir das erste match haben, unser Indice nicht wieder überschrieben wird
-                break;
+                //kein break, weil wir hier ja das letzte haben wollen
             }
         }
         //erstellen des neuen Arrays
