@@ -163,7 +163,6 @@ static double distance (double [] gps) {
         System.out.println( " is the new jogging route.");
 
     }
-    testAll();
 
 
 
