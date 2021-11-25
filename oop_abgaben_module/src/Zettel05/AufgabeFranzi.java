@@ -144,6 +144,21 @@ import java.util.Arrays;static double distance (double [] gps) {
         return newGPS;
 
     }
+    //2_e)
+    static void testAll (){
+        double [] testingGPS = {-20.0, 0.0,200.0, -18.5, -0.647,200.577, -16.85, -1.237,
+                201.16, -15.035, -1.763, 201.739, -13.038, -2.219,
+                202.299, -10.842, -2.599, 202.824, -8.426, -2.894,
+                203.289, -5.769, -3.096, 203.667, -2.846, -3.195, 203.918,
+                0.369, -3.182, 203.998, 3.861, -3.205, 203.85, 7.284,
+                -3.176, 203.469, 10.638, -3.209, 202.868, 13.926, -3.175,
+                202.06, 17.147, -3.209,201.059, 20, -3.174, 199.877}
+        System.out.println(distance(testingGPS) + " is the Distance.");
+        System.out.println(velocity(testingGPS) + " is the average velocity.");
+        System.out.println(maxVelocity(testingGPS) + " is the maximum velocity.");
+        System.out.println(patrialGPS(testingGPS) + " is the new jogging route.");
+
+    }
 
 
 
