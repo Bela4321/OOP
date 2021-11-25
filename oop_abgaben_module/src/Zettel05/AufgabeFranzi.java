@@ -82,7 +82,7 @@ public class AufgabeFranzi {
 
     //2_a)
 
-import java.util.Arrays;static double distance (double [] gps) {
+static double distance (double [] gps) {
         int i = 0;
         double dist = 0;
         while (i < gps.length - 5){
@@ -152,13 +152,18 @@ import java.util.Arrays;static double distance (double [] gps) {
                 203.289, -5.769, -3.096, 203.667, -2.846, -3.195, 203.918,
                 0.369, -3.182, 203.998, 3.861, -3.205, 203.85, 7.284,
                 -3.176, 203.469, 10.638, -3.209, 202.868, 13.926, -3.175,
-                202.06, 17.147, -3.209,201.059, 20, -3.174, 199.877}
-        System.out.println(distance(testingGPS) + " is the Distance.");
-        System.out.println(velocity(testingGPS) + " is the average velocity.");
-        System.out.println(maxVelocity(testingGPS) + " is the maximum velocity.");
-        System.out.println(patrialGPS(testingGPS) + " is the new jogging route.");
+                202.06, 17.147, -3.209,201.059, 20, -3.174, 199.877};
+        double distance = distance(testingGPS);
+        double velocity = velocity(testingGPS);
+        double maxVelocity = maxVelocity(testingGPS);
+        //double newRoute = patrialGPS(testingGPS);
+        System.out.println( distance + "m is the Distance.");
+        System.out.println( velocity + "m/s is the average velocity.");
+        System.out.println( maxVelocity + "m/s is the maximum velocity.");
+        System.out.println( " is the new jogging route.");
 
     }
+    testAll();
 
 
 
@@ -169,5 +174,6 @@ import java.util.Arrays;static double distance (double [] gps) {
         distance(a);
         velocity(a);
         maxVelocity(a);
+        testAll();
     }
 }
