@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class AufgabeFranzi {
 
     //1_a)
-    static void testAll() {
+    static void testAll1() {
         float [] numbers = { -4, 0, 2, 6, 10, 23};
         boolean ascending = true;
         if (getMinimum(numbers) == -4) {
@@ -120,29 +120,53 @@ static double distance (double [] gps) {
 
     //2_d) , funktioniert irgendwie nicht
     static double [] patrialGPS (double [] gps, double [] start, double [] end) {
-        //double [] startGPS = [ ];
-        //double [] endGPS = [ ];
-        double[] newGPS = [ ];
-        if ((start[0] == 0 && start[1] == 0 && start[2] == 0) || (end[0] == 0 && end[1] == 0 && end[2] == 0)) {
+        //Bela: Indices sind kein Array
+        int startGPS=0;
+        int endGPS=0;
+        //Bela: new gps hier nich nicht initialisieren, wir wissen noch nicht wie lange das ist.
+        //Bela null ist nicht 0, Außerdem ist wenn das ganze array, nicht die einträge null
+        if (start == null || end == null ){
             return gps;
         }
-        if ((start[0] < end[0] && start[1] < end[1] && start[2] < end[2])) {
+        //Bela: es geht nicht um die Koordianten, sondern um die Indicees. Der vergleich kann auch erst gemacvht werden, wenn wir die indicees bestimmt haben.
+        //if frage hätte ich andersherum gemacht, weil noch ein bisschen code kommt
+        if(!(start.length == 3 && end.length == 3)) {
             return gps;
-        }
-        if (start.length == 3 && end.length == 3) {
+        }//Bela: da fehlt nen outer Loop, damit alle Koordinaten geckeckt wertden.
+        for (int k =0;k<gps.length-3;k += 3) {
+            //Bela: du musst generell überprüfen, ob alle drei Koordinaten (x,y,z) übereinstimmen
+            int coverageCount = 0;
             for (int i = 0; i < 3; i++) {
-                //startGPS [i] = start [i];
-                gps[i] = start[i];
-                newGPS = gps;
+                //da fehlt ne if abfrage, ob die Koordinaten übereinstimmen.
+                if (start[i]==gps[k+i]) {
+                    coverageCount +=1;
+                }
             }
-            //for (int i = 0; i < 3; i++){
-            //endGPS[i] = end [i];
-            newGPS[newGPS.length - 1] = end[2];
-            newGPS[newGPS.length - 2] = end[1];
-            newGPS[newGPS.length - 3] = end[0];
+            if (coverageCount==3) {
+                startGPS=k;
+                //damit wir sobald wir das erste match haben, unser Indice nicht wieder überschrieben wird
+                break;
+            }
         }
+        //das ganze nochmal für end
+        for (int k =0;k<gps.length-3;k += 3) {
+            //Bela: du musst generell überprüfen, ob alle drei Koordinaten (x,y,z) übereinstimmen
+            int coverageCount = 0;
+            for (int i = 0; i < 3; i++) {
+                //da fehlt ne if abfrage, ob die Koordinaten übereinstimmen.
+                if (end[i]==gps[k+i]) {
+                    coverageCount +=1;
+                }
+            }
+            if (coverageCount==3) {
+                endGPS=k;
+                //damit wir sobald wir das erste match haben, unser Indice nicht wieder überschrieben wird
+                break;
+            }
+        }
+        //erstellen des neuen Arrays
+        double[] newGPS = Arrays.copyOfRange(gps,startGPS,endGPS+3);
         return newGPS;
-
     }
     //2_e)
     static void testAll (){
@@ -156,11 +180,15 @@ static double distance (double [] gps) {
         double distance = distance(testingGPS);
         double velocity = velocity(testingGPS);
         double maxVelocity = maxVelocity(testingGPS);
-        //double newRoute = patrialGPS(testingGPS);
+        double[] start = {-18.5, -0.647,200.577};
+        double[] end = {10.638, -3.209, 202.868};
+        double[] newRoute = patrialGPS(testingGPS,start,end);
         System.out.println( distance + "m is the Distance.");
         System.out.println( velocity + "m/s is the average velocity.");
         System.out.println( maxVelocity + "m/s is the maximum velocity.");
-        System.out.println( " is the new jogging route.");
+        for (double xyz:newRoute) {
+            System.out.println(xyz);
+        }
 
     }
 
