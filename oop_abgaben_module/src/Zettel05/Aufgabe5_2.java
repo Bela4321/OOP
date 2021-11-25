@@ -31,6 +31,9 @@ public class Aufgabe5_2 {
         if (start==null||end==null) {
             return gps;
         }
+        if (!(start.length==3&&start.length==3)) {
+            return gps;
+        }
         int startIndex = 0;
         for (int i=0;i<=gps.length-3;i+=3) {
             if (gps[i]==start[0]&&gps[i+1]==start[1]&&gps[i+2]==start[2]) {
