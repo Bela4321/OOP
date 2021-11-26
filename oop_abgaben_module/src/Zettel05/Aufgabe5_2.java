@@ -1,5 +1,5 @@
 package Zettel05;
-//moin moin
+
 import java.util.Arrays;
 
 public class Aufgabe5_2 {
@@ -12,7 +12,7 @@ public class Aufgabe5_2 {
     }
 
     static double velocity(double[] gps) {
-        double time = gps.length/3.;
+        double time = gps.length/3.-1;
         return distance(gps)/time;
     }
 
@@ -72,7 +72,7 @@ public class Aufgabe5_2 {
         System.out.println(velocity(testingData));
         System.out.println(maxVelocity(testingData));
         double[] start ={-10.842, -2.599, 202.824};
-        double[] end = {10.638, -3.209, 202.868};
+        double[] end = {3.861, -3.205, 203.85};
 
         double[] partialGPSTest= partialGPS(testingData,start, end);
         for (double GPS :partialGPSTest) {
