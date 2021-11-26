@@ -2,10 +2,11 @@ package Zettel05;
 
 public class michel05 {
 
-
+// noch einmal richtig rekursiv schreiben.
+//wichitg: es muss eine Eingabe mit unterschiedlich vielen Elementen möglich ist. Wird bei Funktionsaufruf eingegeben!!
     //b): Minimum der Zahlen übergeben
-    public static float getMinimum (float[] numbers) {
-        numbers = new float[]{3.4f,4.5f,5.6f,6.7f};
+    public static float getMinimum(float[] numbers) {
+        numbers = new float[]{3.4f, 4.5f, 5.6f, 6.7f};
         if (numbers.length == 1) {
             return numbers[0];
         } else if (numbers[0] < numbers[1] && numbers[0] < numbers[2] && numbers[0] < numbers[3]) {
@@ -22,8 +23,8 @@ public class michel05 {
     }
 
     //c): Maximum der Zahlen übergeben
-    public static float getMaximum (float[] numbers) {
-        numbers = new float[]{3.4f,4.5f,5.6f,6.7f};
+    public static float getMaximum(float[] numbers) {
+        numbers = new float[]{3.4f, 4.5f, 5.6f, 6.7f};
         int i = 0;
         float maxValue = numbers[0];
         while (i < numbers.length) {
@@ -36,14 +37,14 @@ public class michel05 {
     }
 
     //d): Durchschnitt der Zahlen übergeben
-    float calculateAverage (float[] numbers) {
-        numbers = new float[]{3.4f,4.5f,5.6f,6.7f};
+    float calculateAverage(float[] numbers) {
+        numbers = new float[]{3.4f, 4.5f, 5.6f, 6.7f};
         float sum = 0;
         for (int i = 0; i < numbers.length; i++) {
             sum += sum + numbers[i];
             System.out.println("This is the average of all array elements: ");
         }
-        return sum/numbers.length;
+        return sum / numbers.length;
     }
 
     //e) Überprüfen ob die Zahlen aufsteigend oder absteigend georndet sind
@@ -60,53 +61,12 @@ public class michel05 {
     }
 
     //a)
-    void testAll () {
-        public static void main(String[] args){
-            System.out.println(getMinimum(2.0f,4.0f,6.0f));
-            System.out.println(getMaximum(2.0f,4.0f,6.0f));
-            System.out.println(calculateAverage(2.0f,4.0f,6.0f));
-            System.out.println(isSorted(2.0f,4.0f,6.0f));
-        }
+
+
+    public static void main(String[] args) {
+        float[] arr = {0.3f, 0.4f, 0.5f};
+        isSorted(arr, true);
     }
 }
 
-    public static void main(String[] args) {
-        float [] arr = {0.3f,0.4f,0.5f};
-        isSorted(arr, true);
-    }
 
-
-    // 5.2)
-    /* Array mit drei Einträgen pro Sekunde als Koordinaten in Metern.
-     */
-
-    double[] gps; //= {x1,y1,z1,x2,y2,z2,...};
-
-    double distance(double[] gps) {
-        Math.sqrt(Math.pow(gps[gps.length - 2] - gps[0]) + Math.pow(gps[(gps.length) - 1] - gps[1]) + Math.pow(gps[gps.length] - gps[2]));
-    }
-
-    double velocity (double[] gps) {
-        Math.sqrt(Math.pow(gps[gps.length - 2] - gps[0]) + Math.pow(gps[(gps.length) - 1] - gps[1]) + Math.pow(gps[gps.length] - gps[2]))/ gps.length;
-    }
-
-    /*
-    max wird auf velocity gesetzt. (in m/s)
-    Dann wird in der for-Schleife die Geschwindigkeit zwischen jeder gelaufenen Sekunde angeschaut. Einheit ist dann schon m/s.
-    Wenn diese größer max, dann ist das die neue maxVelocity.
-     */
-    double maxVelocity (double[] gps) {
-        for (int i = 0; i < gps.length; i = i + 3) {
-            double max = Math.sqrt(Math.pow(gps[gps.length - 2] - gps[0]) + Math.pow(gps[(gps.length) - 1] - gps[1]) + Math.pow(gps[gps.length] - gps[2])) / gps.length;
-            double newMax = Math.sqrt(Math.pow(gps[i + 3] - gps[i]) + Math.pow(gps[(i + 4] - gps[i + 1]) + Math.pow(gps[i + 5] - gps[i + 2]));
-            if (newMax > max) {
-                max = newMax;
-            }
-            return max;
-        }
-//return ___
-    }
-
-    double[] partialGPS(double[] gps, double[] start, double[] end) {
-
-    }
