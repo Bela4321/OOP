@@ -31,7 +31,7 @@ public class Aufgabe5_2 {
         if (start==null||end==null) {
             return gps;
         }
-        if (!(start.length==3&&start.length==3)) {
+        if (!(start.length==3&&end.length==3)) {
             return gps;
         }
         int startIndex = 0;
