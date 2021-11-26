@@ -1,23 +1,7 @@
 package Zettel05;
 
 public class michel05 {
-}
-package Zettel05;
 
-        import java.util.Arrays;
-
-public class Aufgabe5_1 {
-    public Aufgabe5_1() {
-    }
-    //a)
-    void testAll () {
-        public static void main(String[] args){
-            System.out.println(getMinimum(2.0f,4.0f,6.0f));
-            System.out.println(getMaximum(2.0f,4.0f,6.0f));
-            System.out.println(calculateAverage(2.0f,4.0f,6.0f));
-            System.out.println(isSorted(2.0f,4.0f,6.0f));
-        }
-    }
 
     //b): Minimum der Zahlen übergeben
     public static float getMinimum (float[] numbers) {
@@ -54,35 +38,41 @@ public class Aufgabe5_1 {
     //d): Durchschnitt der Zahlen übergeben
     float calculateAverage (float[] numbers) {
         numbers = new float[]{3.4f,4.5f,5.6f,6.7f};
-        float sum;
-        for (int i = 0; i < numbers.length; i++){
+        float sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
             sum += sum + numbers[i];
-            return "This is the sum of all array elements: " + sum;
+            System.out.println("This is the average of all array elements: ");
         }
-        return "This is the average of all array elements: " + sum/numbers.length;
+        return sum/numbers.length;
     }
-
-}
 
     //e) Überprüfen ob die Zahlen aufsteigend oder absteigend georndet sind
-    boolean descending (){
-        for(float element: float[] numbers) {
-            int i = 0;
-            numbers[i] > numbers[i+1];
-            i++
+
+    static boolean isSorted(float[] numbers, boolean ascending) {
+        float previous = numbers[0];
+        for (float element : numbers) {
+            if (previous > element) {
+                return false;
+            }
+            previous = element;
         }
         return true;
     }
-    boolean ascending (){
-        for(float element: float[] numbers) {
-            int i = 0;
-            numbers[i] < numbers[i+1];
-            i++;
+
+    //a)
+    void testAll () {
+        public static void main(String[] args){
+            System.out.println(getMinimum(2.0f,4.0f,6.0f));
+            System.out.println(getMaximum(2.0f,4.0f,6.0f));
+            System.out.println(calculateAverage(2.0f,4.0f,6.0f));
+            System.out.println(isSorted(2.0f,4.0f,6.0f));
         }
-        return true;
     }
-    boolean isSorted(float[] numbers, boolean ascending) {
-        return boolean ascending;
+}
+
+    public static void main(String[] args) {
+        float [] arr = {0.3f,0.4f,0.5f};
+        isSorted(arr, true);
     }
 
 
