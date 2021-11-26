@@ -1,5 +1,5 @@
 package Zettel05;
-//moin moin
+
 import java.util.Arrays;
 
 public class Aufgabe5_2 {
@@ -12,7 +12,7 @@ public class Aufgabe5_2 {
     }
 
     static double velocity(double[] gps) {
-        double time = gps.length/3.;
+        double time = gps.length/3.-1;
         return distance(gps)/time;
     }
 
@@ -29,6 +29,9 @@ public class Aufgabe5_2 {
 
     static double[] partialGPS(double[] gps, double[] start, double[] end) {
         if (start==null||end==null) {
+            return gps;
+        }
+        if (!(start.length==3&&start.length==3)) {
             return gps;
         }
         int startIndex = 0;
@@ -63,13 +66,13 @@ public class Aufgabe5_2 {
                 202.299, -10.842, -2.599, 202.824, -8.426, -2.894,
                 203.289, -5.769, -3.096, 203.667, -2.846, -3.195, 203.918,
                 0.369, -3.182, 203.998, 3.861, -3.205, 203.85, 7.284,
-                -3.176, 203.469, 10.638, -3.209, 202.868, 13.926, -3.175,
+                 -3.176, 203.469, 10.638, -3.209, 202.868, 13.926, -3.175,
                 202.06, 17.147, -3.209,201.059, 20, -3.174, 199.877};
         System.out.println(distance(testingData));
         System.out.println(velocity(testingData));
         System.out.println(maxVelocity(testingData));
         double[] start ={-10.842, -2.599, 202.824};
-        double[] end = {10.638, -3.209, 202.868};
+        double[] end = {3.861, -3.205, 203.85};
 
         double[] partialGPSTest= partialGPS(testingData,start, end);
         for (double GPS :partialGPSTest) {

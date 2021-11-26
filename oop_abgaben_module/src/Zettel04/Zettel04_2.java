@@ -45,6 +45,7 @@ public class Zettel04_2 {
             return twoCompBinary;
         }
     }
+
     static void myTest() {
         String[] binaryTest = {"0", "101","1010","","11001001"};
         int[] binaryTestingInts ={0, 5, 10, -1, 201};
@@ -87,6 +88,8 @@ public class Zettel04_2 {
         }
     }
     public static void main(String[] args) {
-        myTest();
+        //myTest();
+        System.out.println(toTwosComplement(-1));
+        System.out.println(toTwosComplement(-53));
     }
 }
