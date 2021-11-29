@@ -1,7 +1,7 @@
 package Präsenzzettel;
 
 import java.util.Arrays;
-
+/*
 public class Zettel5_Franzi {
     static double[] computerIncline(double [] points) {
         double [] incline = new double[points.length/2];
@@ -18,3 +18,4 @@ public class Zettel5_Franzi {
 
     }
 }
+*/
