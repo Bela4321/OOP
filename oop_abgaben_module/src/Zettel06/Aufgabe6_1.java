@@ -1,14 +1,19 @@
 package Zettel06;
 
 public class Aufgabe6_1 {
-    static boolean test() {
-        return true;
-    }
-    public static void main(String[] args) {
-        int i = 3;
-        System.out.println(i);
-        if (test()) {
-            System.out.println("Franzi, ich war vor dir hier. Liebste Grüße, dein Lieblings-Michel :-))))");
-        }
-    }
+   static double seriesCircuit(double rOne, double rTwo) {
+       return rOne+rTwo;
+   }
+   static double parallelCircuit(double rOne, double rTwo) {
+       return(rOne*rTwo/(rOne+rTwo));
+   }
+   public static void main(String[] args) {
+        double r1=60;
+        double r2=40;
+        double r3=50;
+        double r4=50;
+        double r5=70;
+        double r6=80;
+        System.out.println(parallelCircuit(seriesCircuit(parallelCircuit(r1,r2),r3),parallelCircuit(seriesCircuit(r4,r5),r6)));
+   }
 }
