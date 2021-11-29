@@ -3,6 +3,7 @@ package Zettel06;
 public class Aufgabe6_2 {
     static int[] primesUpTo(int n) {
         if (n<0) {
+            System.out.println("no not positive numbers pls :(");
             return null;
         }
         //create table
@@ -28,9 +29,9 @@ public class Aufgabe6_2 {
         }
         int[] result = new int[counter];
         counter = 0;
-        for (int i=0;i< table.length;i++) {
-            if (table[i] !=-1) {
-                result[counter] = table[i];
+        for (int j : table) {
+            if (j != -1) {
+                result[counter] = j;
                 counter++;
             }
         }
@@ -39,8 +40,19 @@ public class Aufgabe6_2 {
     }
 
     public static void main(String[] args) {
-        for (int n : primesUpTo(100)) {
-            System.out.println(n);
+        //test
+        int[] primes = {2,
+                3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
+                61, 67, 71, 73, 79, 83, 89, 97
+        };
+        int[] test = primesUpTo(100);
+        for (int i=0;i<primes.length;i++) {
+            if (primes[i] != test[i]) {
+                System.out.println("test failed");
+            } else {
+                System.out.println("+");
+            }
         }
+
     }
 }
