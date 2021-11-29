@@ -27,19 +27,19 @@ public class AufgabeFranzi {
     }
 
     //6.2 a)
+
     int[] primesUpTo (int n) {
         if (n < 0){
             return null;
         }
         int [] primes = new int[n-1];
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             primes[i] = i;
             if (primes[i] == 0) {
-                int[] finalPrimes = Arrays.copyOfRange(primes, i, n);
-            } if (primes[i] == 1) {
-                int[]
-
-            }
+                primes = Arrays.copyOfRange(primes, i, n);
+            } if (primes [i] == 1) {
+                primes = Arrays.copyOfRange(primes, i, n);
+            } if
         }
     }
 
