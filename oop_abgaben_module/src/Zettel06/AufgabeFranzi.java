@@ -10,7 +10,7 @@ public class AufgabeFranzi {
     }
 
     //6.1 b)
-    static double  parallelCircuit (double rOne, double rTwo) {
+    static double parallelCircuit (double rOne, double rTwo) {
         double circuit = (rOne * rTwo) / (rOne + rTwo);
         return circuit;
     }
@@ -23,7 +23,7 @@ public class AufgabeFranzi {
         double circuitThree = seriesCircuit(circuit[3], circuit[4]);
         double circuitFour = parallelCircuit(circuitThree, circuit[5]);
         double circuitResult = parallelCircuit(circuitTwo, circuitFour);
-        System.out.println(circuitResult + "Ohm ist der Widerstand des Schaltkreises.");
+        System.out.println(circuitResult + " Ohm ist der Widerstand des Schaltkreises.");
     }
 
     //6.2 a)
