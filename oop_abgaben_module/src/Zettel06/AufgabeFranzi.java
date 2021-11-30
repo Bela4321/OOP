@@ -33,17 +33,27 @@ public class AufgabeFranzi {
             return null;
         }
         int [] primes = new int[n-1];
-        for (int i = 0; i < n; i++) {
-            primes[i] = i;
-            if (primes[i] == 0) {
-                primes = Arrays.copyOfRange(primes, i, n);
-            } if (primes [i] == 1) {
-                primes = Arrays.copyOfRange(primes, i, n);
-            } if
+        for (int i = 2; i < n; i++) {
+            for (int b = 2; b < Math.sqrt(n) + 2; b++) {
+                if (i % b == 0) {
+                    primes[i] = 0;
+                }
+                if (primes[i] == 0) {
+                    primes[i] = primes[i + 1];
+                }
+            }
         }
+        int counter = 0;
+        for (int entry:primes) {
+            if (entry != 0) {
+                counter++;
+            }
+        }
+        int[] finalPrimes = new int[counter];
+        finalPrimes = Arrays.copyOfRange(primes, 0, counter - 1 );
+        return finalPrimes;
     }
 
-}
 
     public static void main(String[] args){
         test();
