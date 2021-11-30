@@ -33,12 +33,12 @@ public class AufgabeFranzi {
             return null;
         }
         int [] primes = new int[n-1];
-        for (int i = 2; i < n; i++) {
+        for (int i = 2; i < n; i++) {//n ist inklusiv dabei
             for (int b = 2; b < Math.sqrt(n) + 2; b++) {
-                if (i % b == 0) {
+                if (i % b == 0) {//und i != b
                     primes[i] = 0;
                 }
-                if (primes[i] == 0) {
+                if (primes[i] == 0) {//all primes[i] sind standartdmäßig 0
                     primes[i] = primes[i + 1];
                 }
             }
@@ -50,7 +50,7 @@ public class AufgabeFranzi {
             }
         }
         int[] finalPrimes = new int[counter];
-        finalPrimes = Arrays.copyOfRange(primes, 0, counter - 1 );
+        finalPrimes = Arrays.copyOfRange(primes, 0, counter - 1 );//die Primzahlen in primes sind nicht hintereinander, da sind immer 0-en dazwischen; endIndex ist exklusiv
         return finalPrimes;
     }
 
