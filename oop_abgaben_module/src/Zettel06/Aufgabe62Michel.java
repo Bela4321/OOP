@@ -2,7 +2,7 @@ package Zettel06;
 
 import java.util.Arrays;
 
-public class Aufgabe63Michel {
+public class Aufgabe62Michel {
 
     static int[] primesUpTo(int n) {
         int[] arrPrimeZ = new int[n - 2];
