@@ -10,6 +10,7 @@ public class Aufgabe6_1 {
    public static void main(String[] args) {
         double r1=60;
         double r2=40;
+        // HEY
         double r3=50;
         double r4=50;
         double r5=70;
