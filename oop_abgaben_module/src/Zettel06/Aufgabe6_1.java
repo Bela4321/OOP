@@ -11,6 +11,7 @@ public class Aufgabe6_1 {
         double r1=60;
         double r2=40;
         //hallo Michel
+        // HEY
         double r3=50;
         double r4=50;
         //moin moin
