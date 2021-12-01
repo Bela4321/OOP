@@ -17,6 +17,7 @@ public class Aufgabe6_1 {
         //moin moin
         double r5=70;
         double r6=80;
+        //sa
         System.out.println(parallelCircuit(seriesCircuit(parallelCircuit(r1,r2),r3),parallelCircuit(seriesCircuit(r4,r5),r6)));
    }
 }
