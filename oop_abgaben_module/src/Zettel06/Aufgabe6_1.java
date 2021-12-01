@@ -10,14 +10,10 @@ public class Aufgabe6_1 {
    public static void main(String[] args) {
         double r1=60;
         double r2=40;
-        //hallo Michel
-        // HEY
         double r3=50;
         double r4=50;
-        //moin moin
         double r5=70;
         double r6=80;
-        //sa
         System.out.println(parallelCircuit(seriesCircuit(parallelCircuit(r1,r2),r3),parallelCircuit(seriesCircuit(r4,r5),r6)));
    }
 }
