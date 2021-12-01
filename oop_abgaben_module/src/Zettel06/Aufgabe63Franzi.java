@@ -14,7 +14,7 @@ public class Aufgabe63Franzi {
     //b)
     static double krtH (double a, double k, double d, double x_n) {
         double x_n1 = (1/k)*((k-1)* x_n + a/Math.pow(x_n,k-1));
-        if (x_n - x_n1 < d){
+        if (Math.abs(x_n - x_n1) < d){
             return x_n1;
         } else {
             return krtH(a ,k , d, x_n1);
