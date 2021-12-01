@@ -22,7 +22,7 @@ public class Aufgabe62Michel {
                 countPrime++;
             }
             int[] arrPrime = new int[countPrime];
-            int countPrime = 0;
+            countPrime = 0;
             for (int j1 : arrPrimeZ) {
                 if (j1 != 0) {
                     arrPrime[countPrime] = j1;
@@ -32,7 +32,10 @@ public class Aufgabe62Michel {
             return arrPrime;
         }
 
-        public static void main (String[]args){
+
+        return null;
         }
+
     }
+    public static void main (String[]args){
 }
