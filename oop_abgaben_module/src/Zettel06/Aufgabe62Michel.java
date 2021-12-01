@@ -33,3 +33,6 @@ public class Aufgabe62Michel {
         }
 
         public static void main (String[]args){
+        }
+    }
+}
