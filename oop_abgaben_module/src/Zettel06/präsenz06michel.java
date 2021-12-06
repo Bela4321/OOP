@@ -1,5 +1,5 @@
 package Zettel06;
-
+/*
 public class präsenz06michel {
 
 // 6.1
@@ -59,5 +59,5 @@ static int facultyTailH (int n, int f) {
 
         präsenz06michel.eins.title; // 6.2 output ERROR
     }
-}
+}*/
 
