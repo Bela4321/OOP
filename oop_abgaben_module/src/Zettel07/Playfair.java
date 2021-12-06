@@ -8,7 +8,7 @@ public class Playfair {
     private static final String REDUCEDALPHABET = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
 
 
-
+    //needs to be non-static in Abgabe
     private static boolean characterInString(String s, Character character) {
         for (int i=0;i<s.length();i++) {
             if (s.charAt(i)==character) {
@@ -60,7 +60,7 @@ public class Playfair {
         }
         return null;
     }
-
+    //needs to be private/non_static in Abgabe
     public static String cleanWord(String word) {
         word = word.toUpperCase();
         String newWord = "";
@@ -98,20 +98,22 @@ public class Playfair {
             } else if (char1.yCoordinate==char2.yCoordinate) {
                 encodedWord = encodedWord +playfairSquare[Math.max(char1.xCoodinate,char2.xCoodinate)][char1.yCoordinate] +playfairSquare[(Math.max(char1.xCoodinate,char2.xCoodinate)+1 )%5][char1.yCoordinate]+ " ";
             } else {
-                if (char1.yCoordinate<char2.yCoordinate) {
-                    encodedWord = encodedWord +playfairSquare[char1.xCoodinate][char1.yCoordinate] + playfairSquare[char2.xCoodinate][char1.yCoordinate]+ " ";
+                if (char1.xCoodinate<char2.xCoodinate) {
+                    encodedWord = encodedWord +playfairSquare[char1.xCoodinate][char2.yCoordinate] + playfairSquare[char2.xCoodinate][char1.yCoordinate] + " ";
                 } else {
-                    encodedWord = encodedWord +playfairSquare[char2.xCoodinate][char1.yCoordinate] + playfairSquare[char1.xCoodinate][char1.yCoordinate]+ " ";
+                        encodedWord = encodedWord +playfairSquare[char2.xCoodinate][char1.yCoordinate] + playfairSquare[char1.xCoodinate][char2.yCoordinate]+ " ";
                 }
             }
         }
 
-        return encodedWord;//.substring(0,encodedWord.length()-1);
+        return encodedWord.substring(0,encodedWord.length()-1);
     }
 
     public static void main(String[] args) {
-        Playfair testgrid = new Playfair("Hallo");
+        Playfair testgrid = new Playfair("Apfelstrudel");
         testgrid.printSquare();
-        System.out.println(testgrid.encode("Hallo"));
+        System.out.println(Playfair.cleanWord("Mittwoch"));
+        System.out.println(testgrid.encode("Mittwoch"));
+
     }
 }
