@@ -22,7 +22,7 @@ public class Playfair {
         codeword = codeword.toUpperCase();
         String resCodeword = "";
         for (int i=0;i<codeword.length();i++) {
-            if (!characterInString(resCodeword+"J", codeword.charAt(i))) {
+            if ((!characterInString(resCodeword+"J", codeword.charAt(i)))&&characterInString(REDUCEDALPHABET, codeword.charAt(i))) {
                 resCodeword += codeword.charAt(i);
             }
         }
@@ -110,10 +110,13 @@ public class Playfair {
     }
 
     public static void main(String[] args) {
-        Playfair testgrid = new Playfair("Apfelstrudel");
-        testgrid.printSquare();
-        System.out.println(Playfair.cleanWord("Mittwoch"));
-        System.out.println(testgrid.encode("Mittwoch"));
+        Playfair testgrid1 = new Playfair("Apfelstrudel");
+        testgrid1.printSquare();
+        System.out.println(testgrid1.encode("Mittwoch"));
+
+        Playfair testgrid2 = new Playfair("Objektorientierte Programmierun");
+        testgrid2.printSquare();
+        System.out.println(testgrid2.encode("Das ist Aufgabe Sieben punkt Eins"));
 
     }
 }
