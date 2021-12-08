@@ -1,5 +1,5 @@
 package Zettel06;
-
+/*
 public class präsenz06michel {
 
 // 6.1
@@ -61,5 +61,5 @@ static int facultyTailH (int n, int f) {
         String ersterTitel = eins.title;
         System.out.println(ersterTitel);
     }
-}
+}*/
 
