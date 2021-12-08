@@ -30,6 +30,7 @@ static int facultyTailH (int n, int f) {
     static präsenz06michel drei = new präsenz06michel("Kurze Geschicht", "baba", "342104855X");
 
 
+
 // 6.3
     static boolean doubleEqual (double a, double b) {
         if (a == b) {
@@ -57,7 +58,8 @@ static int facultyTailH (int n, int f) {
         System.out.println(doubleEqualDelta(3.4, 2.1, 7.5));
         System.out.println(doubleEqualDelta(0.2 + 0.1, 0.3, 0.00000001));
 
-        präsenz06michel.eins.title; // 6.2 output ERROR
+        String ersterTitel = eins.title;
+        System.out.println(ersterTitel);
     }
 }
 
