@@ -4,7 +4,7 @@ package Zettel07;
 import java.util.Locale;
 
 public class Playfair {
-    private Character[][] playfairSquare; //should be final, but doesnt work if it is :(
+    private final Character[][] playfairSquare= new Character[5][5]; //should be final, but doesnt work if it is :(
     private static final String REDUCEDALPHABET = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
 
 
@@ -31,13 +31,11 @@ public class Playfair {
                 resCodeword += REDUCEDALPHABET.charAt(i);
             }
         }
-        Character[][] temp = new Character[5][5];
         for (int row= 0;row<5;row++) {
             for (int col = 0;col<5;col++) {
-                temp[row][col] = resCodeword.charAt(5*row+col);
+                playfairSquare[row][col] = resCodeword.charAt(5*row+col);
             }
         }
-        playfairSquare = temp;
     }
 
     public void printSquare() {
