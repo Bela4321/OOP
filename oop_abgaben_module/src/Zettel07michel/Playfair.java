@@ -8,39 +8,39 @@ public class Playfair {
     static private final String Alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
 
     boolean characterInString(String s, char c) {
-        if (s.indexOf(c) > 0) {
+        if (s.indexOf(c) > 0) {//needs >=0
             return true;
         } else {
-            System.out.println("Character not found in String.");
+            System.out.println("Character not found in String.");//no print needed
             return false;
         }
     }
 
     public Playfair(String codeword) {
-        codeword.toUpperCase(Locale.ROOT);
+        codeword.toUpperCase(Locale.ROOT);//.toUpperCase() instead (doesnt matter)
         int count = 0;
         //Bereinigen von Dooplungen
         char[] codewordArrCheck = codeword.toCharArray();
         for (int i = 0; i <= codeword.length(); i++) {
             for (int j = i + 1; j <= codeword.length(); j++) {
                 if (codewordArrCheck[i] == codewordArrCheck[j] || codewordArrCheck[j] == 'J') {
-                    StringBuilder codeword1 = new StringBuilder();
-                    codeword1.deleteCharAt(j); //Wie kann ich hier jetzt das codeword1 für weiteres Vorgehen nutzen?
+                    StringBuilder codeword1 = new StringBuilder();//wird jetzt bei jedem loop neu initialisiert (scope ist zu klein), muss außerhalb initialisiert werden; initialised empty, needs to be codeword.
+                    codeword1.deleteCharAt(j); //Wie kann ich hier jetzt das codeword1 für weiteres Vorgehen nutzen? siehe zeile 27;j needs to be j-count weil die indexe durch das herausnehmen von bichstaben verschoben werden
                     count++;
                     break;
                 }
             }
         }
-        //
+        //save the stringbuilder as string
 
 
-        char[] alphabetArr = Alphabet.toCharArray();
+        char[] alphabetArr = Alphabet.toCharArray();//what is this? if condition always true, use char in string method from above
         for (int i = 0; i <= 26; i++) {
             if (alphabetArr[i] != 'A' || alphabetArr[i] != 'F' || alphabetArr[i] != 'E' || alphabetArr[i] != 'L' || alphabetArr[i] != 'S' || alphabetArr[i] != 'T' || alphabetArr[i] != 'R' || alphabetArr[i] != 'U' || alphabetArr[i] != 'D') {
                 codeword = codeword + alphabetArr[i];
             }
         }
-        char[] codewordArr = codeword.toCharArray();
+        char[] codewordArr = codeword.toCharArray();//more elegant: use nested for-loops (for row(for column))
         for (int i = 0; i <= 5; i++) {
             playfairSquare[0][i] = codewordArr[i];
         }
