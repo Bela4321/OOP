@@ -12,13 +12,13 @@ public class Caesar {
         int positionA = 0;
         int positionB = 0;
 
-        for (int i = 0; i < Alphabet.length(); i++){
+        for (int i = 0; i < Alphabet.length(); i++){//use Alphabet.IndexAt(a)
             if ( a == Alphabet.charAt(i)){
                 positionA = i;
             }
         }
 
-        for (int j = 0; j< Alphabet.length(); j++){
+        for (int j = 0; j< Alphabet.length(); j++){//use Alphabet.IndexAt(b)
             if (b == Alphabet.charAt(j)){
                 positionB = j;
             }
@@ -26,11 +26,11 @@ public class Caesar {
 
         int difference = 0;
 
-        if (positionA <= positionB){
+        if (positionA <= positionB){//unnötig, wird schon durch Math.abs() getan, Richtungsinformation geht verloren
             difference = Math.abs(positionA-positionB);
         } else {
             difference = Math.abs(positionB-positionA);
-            //wie bekomme ich das hin, dass der von hintem im Alpabeth wieder nach vorne springt?
+            //wie bekomme ich das hin, dass der von hintem im Alpabeth wieder nach vorne springt? --> %26, bzw +26 und dann %26 (für negative differenz)
         }
 
         String word = "";
@@ -41,7 +41,7 @@ public class Caesar {
                     if (positionA <= positionB) {
                         word += Alphabet.charAt((l + difference) % 26);
                     } else {
-                        word += Alphabet.charAt((l- difference)% 26);
+                        word += Alphabet.charAt((l- difference)% 26);//noch +26 , sonst auch negative zahlen
                     }
                 }
             }
