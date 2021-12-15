@@ -2,7 +2,7 @@ package Zettel08;
 
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Date;
+
 
 interface Comparable{
     static Card[] sort(Card[] cards) {
