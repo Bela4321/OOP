@@ -29,7 +29,8 @@ public class Caesar {
         if (positionA <= positionB){
             difference = Math.abs(positionA-positionB);
         } else {
-            difference = positionA - positionB;
+            difference = Math.abs(positionB-positionA);
+            //wie bekomme ich das hin, dass der von hintem im Alpabeth wieder nach vorne springt?
         }
 
         String word = "";
@@ -37,7 +38,11 @@ public class Caesar {
         for (int k = 0; k < coded.length(); k++){
             for (int l = 0; l < Alphabet.length(); l++){
                 if (coded.charAt(k) == Alphabet.charAt(l)){
-                    word += Alphabet.charAt((l + difference) % 26);
+                    if (positionA <= positionB) {
+                        word += Alphabet.charAt((l + difference) % 26);
+                    } else {
+                        word += Alphabet.charAt((l- difference)% 26);
+                    }
                 }
             }
         }
