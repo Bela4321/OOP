@@ -16,8 +16,12 @@ public class HexaDecimal implements Number{
     public int toIntValue() {
         int result =0;
         char[] arr = ValueInHex.toCharArray();
-        for (int i = arr.length-1; i >=0; i--) {
-            result += arr[i]*Math.pow(16,i);
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]<64) {
+                result += (arr[i]-48) * Math.pow(16, arr.length-i-1);
+            } else {
+                result += (arr[i]-55) * Math.pow(16, arr.length-i-1);
+            }
         }
         return  result;
     }
@@ -33,7 +37,8 @@ public class HexaDecimal implements Number{
             if (character<=9) {
                 result = character+result;
             } else {
-                result = ((char)55+character)+result;
+                result = (char) (55+character)+result;
+
             }
             value/=16;
         }
@@ -45,7 +50,9 @@ public class HexaDecimal implements Number{
         HexaDecimal num2 = new HexaDecimal("5B2");
         System.out.println("num1: "+num1);
         System.out.println("num2: "+num2);
-        num1.fromIntValue(0);
-        System.out.println(num1);
+        System.out.println(num1.toIntValue());
+        System.out.println(num2.toIntValue());
+        num1.fromIntValue(100);
+        System.out.println("num1: "+num1);
     }
 }
