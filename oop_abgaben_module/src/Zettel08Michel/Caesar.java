@@ -49,4 +49,4 @@ public class Caesar {
             decode("XHZRGFLGJSOFRNS", 'G', 'B');
         }
     }
-}
+

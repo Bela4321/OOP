@@ -24,7 +24,7 @@ public class Playfair {
         char[] codewordArrCheck = codeword.toCharArray();
         for (int i = 0; i <= codeword.length(); i++) {
             for (int j = i + 1; j <= codeword.length(); j++) {
-                if (!(codewordArrCheck[i] == codewordArrCheck[j]) || !(codewordArrCheck[j] == 'J') {
+                if (!(codewordArrCheck[i] == codewordArrCheck[j]) || !(codewordArrCheck[j] == 'J')) {
                     codeword1 = codeword1 + codewordArrCheck[i];
                     //wird jetzt bei jedem loop neu initialisiert (scope ist zu klein), muss außerhalb initialisiert werden; initialised empty, needs to be codeword.
                     //Wie kann ich hier jetzt das codeword1 für weiteres Vorgehen nutzen? siehe zeile 27;j needs to be j-count weil die indexe durch das herausnehmen von bichstaben verschoben werden
@@ -59,15 +59,9 @@ public class Playfair {
             playfairSquare[4][i] = codewordArr[i];
         }
     }
-
-    public void printSquare() {
-        System.out.println(playfairSquare[0][0] + " " + playfairSquare[0][1] + " " + playfairSquare[0][2] + " " + playfairSquare[0][3] + " " + playfairSquare[0][4]);
-        System.out.println(playfairSquare[1][0] + " " + playfairSquare[1][1] + " " + playfairSquare[1][2] + " " + playfairSquare[1][3] + " " + playfairSquare[1][4]);
-        System.out.println(playfairSquare[2][0] + " " + playfairSquare[2][1] + " " + playfairSquare[2][2] + " " + playfairSquare[2][3] + " " + playfairSquare[2][4]);
-        System.out.println(playfairSquare[3][0] + " " + playfairSquare[3][1] + " " + playfairSquare[3][2] + " " + playfairSquare[3][3] + " " + playfairSquare[3][4]);
-        System.out.println(playfairSquare[4][0] + " " + playfairSquare[4][1] + " " + playfairSquare[4][2] + " " + playfairSquare[4][3] + " " + playfairSquare[4][4]);
-    }
 }
+
+
 
 
 
