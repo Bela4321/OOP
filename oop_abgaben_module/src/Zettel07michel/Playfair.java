@@ -8,7 +8,7 @@ public class Playfair {
     static private final String Alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
 
     boolean characterInString(String s, char c) {
-        if (s.indexOf(c) > 0) {//needs >=0
+        if (s.indexOf(c) >= 0) {
             return true;
         } else {
             System.out.println("Character not found in String.");//no print needed
@@ -19,13 +19,15 @@ public class Playfair {
     public Playfair(String codeword) {
         codeword.toUpperCase(Locale.ROOT);//.toUpperCase() instead (doesnt matter)
         int count = 0;
+        String codeword1 = "";
         //Bereinigen von Dooplungen
         char[] codewordArrCheck = codeword.toCharArray();
         for (int i = 0; i <= codeword.length(); i++) {
             for (int j = i + 1; j <= codeword.length(); j++) {
-                if (codewordArrCheck[i] == codewordArrCheck[j] || codewordArrCheck[j] == 'J') {
-                    StringBuilder codeword1 = new StringBuilder();//wird jetzt bei jedem loop neu initialisiert (scope ist zu klein), muss außerhalb initialisiert werden; initialised empty, needs to be codeword.
-                    codeword1.deleteCharAt(j); //Wie kann ich hier jetzt das codeword1 für weiteres Vorgehen nutzen? siehe zeile 27;j needs to be j-count weil die indexe durch das herausnehmen von bichstaben verschoben werden
+                if (!(codewordArrCheck[i] == codewordArrCheck[j]) || !(codewordArrCheck[j] == 'J') {
+                    codeword1 = codeword1 + codewordArrCheck[i];
+                    //wird jetzt bei jedem loop neu initialisiert (scope ist zu klein), muss außerhalb initialisiert werden; initialised empty, needs to be codeword.
+                    //Wie kann ich hier jetzt das codeword1 für weiteres Vorgehen nutzen? siehe zeile 27;j needs to be j-count weil die indexe durch das herausnehmen von bichstaben verschoben werden
                     count++;
                     break;
                 }
