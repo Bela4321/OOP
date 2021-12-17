@@ -6,5 +6,6 @@ class CaesarChiffreTest {
 
     @org.junit.jupiter.api.Test
     void decode() {
+
     }
 }

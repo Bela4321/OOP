@@ -27,6 +27,7 @@ public class HexaDecimal implements Number{
     }
 
     public void fromIntValue(int value) {
+        value = Math.abs(value);
         if (value==0) {
             this.ValueInHex="0";
             return;
