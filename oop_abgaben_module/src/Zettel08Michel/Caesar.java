@@ -26,10 +26,10 @@ public class Caesar {
             String decodedString = "";
             for (int locationWord = 0; locationWord <= codedArr.length; locationWord++) {
                 for (int locationAlphabet = 0; locationAlphabet <= alphabetArr.length; locationAlphabet++) {//again needs to be locationAlphabet < alphabetArr.length
-                    /*if (decoded[locationWord]== alphabet[locationAlphabet]) {
-                        decodedString += alphabet[(locationAlphabet+shift_value)%26]
+                    if (codedArr[locationWord]== alphabetArr[locationAlphabet]) {
+                        decodedString += alphabetArr[(locationAlphabet+shift_value)%26];
                     }
-                    */
+
 
 
 
