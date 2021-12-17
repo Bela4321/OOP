@@ -26,14 +26,20 @@ public class Caesar {
             String decodedString = "";
             for (int locationWord = 0; locationWord <= codedArr.length; locationWord++) {
                 for (int locationAlphabet = 0; locationAlphabet <= alphabetArr.length; locationAlphabet++) {//again needs to be locationAlphabet < alphabetArr.length
-                    //
-                    if (alphabetArr[locationAlphabet + shift_value] <= alphabetArr.length) {//ohne alphabetArr[] sondt vergleichst du buchstaben mit Zahlen
+                    /*if (decoded[locationWord]== alphabet[locationAlphabet]) {
+                        decodedString += alphabet[(locationAlphabet+shift_value)%26]
+                    }
+                    */
+
+
+
+                    /*if (alphabetArr[locationAlphabet + shift_value] <= alphabetArr.length) {//ohne alphabetArr[] sondt vergleichst du buchstaben mit Zahlen
                         codedArr[locationWord] = alphabetArr[locationAlphabet + shift_value];
                     }
                     if (alphabetArr[locationAlphabet + shift_value] > alphabetArr.length) {
                         codedArr[locationWord] = alphabetArr[0 + alphabetArr[25] - alphabetArr[locationAlphabet + shift_value]];
                     }
-                    decodedString += codedArr[locationWord];
+                    decodedString += codedArr[locationWord];*/
                 }
             }
 
