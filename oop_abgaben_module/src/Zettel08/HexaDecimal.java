@@ -6,7 +6,7 @@ public class HexaDecimal implements Number{
     private String ValueInHex;
 
     public String toString() {
-        return ValueInHex +" (="+toIntValue()+")";
+        return new String(ValueInHex);
     }
 
     HexaDecimal(String hexzahl) {
@@ -45,7 +45,7 @@ public class HexaDecimal implements Number{
         }
         this.ValueInHex = result;
     }
-
+/*
     public static void main(String[] args) {
         HexaDecimal num1 = new HexaDecimal("AF21");
         HexaDecimal num2 = new HexaDecimal("5B2");
@@ -76,5 +76,5 @@ public class HexaDecimal implements Number{
         num2.divide(new HexaDecimal("19"));
         System.out.println("num1: "+num1);
         System.out.println("num2: "+num2);
-    }
+    }*/
 }
