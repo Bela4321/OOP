@@ -2,6 +2,9 @@ package Zettel08;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CardTest {
@@ -23,8 +26,8 @@ class CardTest {
     @Test
     void sort() {
         Card[] cardsArray = {card1, card2,card3,card4,card5,card6,card7,card3,card4,card7};
-        Card[] sortedArray = Card.sort(cardsArray);
+        Arrays.sort(cardsArray);
         Card[] expectedArray = {card4, card4, card3, card3, card6, card5, card2, card1, card7, card7};
-        assertArrayEquals(expectedArray, sortedArray);
+        assertArrayEquals(expectedArray, cardsArray);
     }
 }
