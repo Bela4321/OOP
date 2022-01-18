@@ -15,7 +15,7 @@ public class HexaDecimal {
             if (arr[i] < 65) {
                 result += arr[i] * Math.pow(16, i);
             } else {
-                result += (arr[i] - 53) * Math.pow(16, i);
+                result += (arr[i] - 55) * Math.pow(16, i);
             }
         }
         return result;

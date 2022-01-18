@@ -39,10 +39,8 @@ public class Card implements Comparable {
         return "ERROR: Invalid Type";
     }
 
-    public static Card[] sort(Card[] cards) {
-        Arrays.sort(cards, new Comparator<Card>() {
-            @Override
-            public int compare(Card o1, Card o2) {
+    public static Card[] sort(Card[] cards) { //größer dann negativer Output, wenn erster kleiner positiv, je nachdem wie sortiert wird, wird direkt danach sortier.
+        Arrays.sort(cards, (o1, o2) -> {
                 if (o1.RELEASE_YEAR != o2.RELEASE_YEAR) {
                     return o1.RELEASE_YEAR - o2.RELEASE_YEAR;
                 } else if (o1.TYPE != o2.TYPE) {
@@ -50,19 +48,18 @@ public class Card implements Comparable {
                 } else {
                     return o1.NAME.compareToIgnoreCase(o2.NAME);
                 }
-            }
         });
 
         return cards;
 
     }
+
+    @Override
     public String toString() {
         return "Card{" +
                 "NAME='" + NAME + '\'' +
                 ", RELEASE_YEAR=" + RELEASE_YEAR +
-                ", TYPE=" + this.getType() +
+                ", TYPE=" + TYPE +
                 '}';
     }
-
-
 }
