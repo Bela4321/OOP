@@ -28,7 +28,6 @@ public class Card implements Comparable<Card> {
             System.out.println("Invalid Cardtype--check initialisation");
             return "";
         }
-
     }
 
     public String toString() {

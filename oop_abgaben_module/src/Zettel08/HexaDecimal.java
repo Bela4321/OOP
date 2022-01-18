@@ -6,7 +6,7 @@ public class HexaDecimal implements Number{
     private String ValueInHex;
 
     public String toString() {
-        return new String(ValueInHex);
+        return ValueInHex;
     }
 
     HexaDecimal(String hexzahl) {
