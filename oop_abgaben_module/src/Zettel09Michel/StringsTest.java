@@ -12,8 +12,8 @@ class StringsTest {
         assertTrue(Strings.isReverse("FRANZI", "IZNARF") == true);
         assertTrue(Strings.isReverse("BELA", "ALEB") == true);
         assertTrue(Strings.isReverse("MICHEL", "LECHIM") == false);
-        assertTrue(Strings.isReverse("FRANZI", "FZNARI") == true);
-        assertTrue(Strings.isReverse("BELA", "BELA") == true);
+        assertTrue(Strings.isReverse("FRANZI", "FZNARI") == false);
+        assertTrue(Strings.isReverse("BELA", "BELA") == false);
     }
 
     private void assertEquals(String reverse) {

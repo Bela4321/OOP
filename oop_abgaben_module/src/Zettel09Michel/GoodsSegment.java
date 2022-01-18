@@ -41,7 +41,8 @@ public class GoodsSegment extends GoodsCrate {
                 for (int k = 0; k < segmentArr.length; k++) {
                         */
     }
-
+}
+/*
     public boolean findSegmentForCrate(GoodsCrate crate){
         if () { // Methode von oben übernehmen und anpassen für "kleinst mögliche Raumnutzung".
             return true;
@@ -52,4 +53,4 @@ public class GoodsSegment extends GoodsCrate {
     }
 
 }
-
+*/
