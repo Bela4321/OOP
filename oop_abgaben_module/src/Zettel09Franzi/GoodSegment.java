@@ -21,29 +21,24 @@ public class GoodSegment {
     public void addCrate(GoodCrate crate){
 
         if (crate.weight > this.weight){
-            System.out.println("Crate is too heavy it doesn't fit.");
+            System.out.println("The crate doesn't fit.");
         }
         double[] crateMeasurements = {crate.width,crate.height,crate.depth};
         double[] compMeasurements = {this.height/3,this.width/3, this.depth/3};
         Arrays.sort(compMeasurements);
         Arrays.sort(crateMeasurements);
         for (int i= 0; i < compMeasurements.length; i++){
-            if (crateMeasurements[i]>compMeasurements[i]) {
-                System.out.println("The crate is too big, it doesn't fit");
+            if (crateMeasurements[i] > compMeasurements[i]) {
+                System.out.println("The crate doesn't fit");
             } else {
-                for(GoodCrate compartments : compartments) {
+                /*for(GoodCrate compartments : compartments) {
                     if (compartments==null) {
                         compartments = crate;
+                        */
                         System.out.println("The crate fits.");
-                        break;
+                        //break;
                     }
             }
         }
     }
 
-
-    }
-
-
-
-}
