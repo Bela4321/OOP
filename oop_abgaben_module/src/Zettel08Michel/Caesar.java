@@ -20,8 +20,8 @@ public class Caesar {
                 }
             }
             int shift_value = Math.abs(b_value - a_value); // values from loop should be used, do not know if it is working.--->yes, but with math.abs() you loose information about whitch direction to shift in
-
-            coded.toUpperCase(Locale.ROOT); // doesnt need "Locale.ROOT"
+            // (b-a+26)%26 der Überlauf wird gewährleistet!
+            coded.toUpperCase();
             char[] codedArr = coded.toCharArray();
             String decodedString = "";
             for (int locationWord = 0; locationWord <= codedArr.length; locationWord++) {
