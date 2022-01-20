@@ -13,7 +13,7 @@ public class Strings {
         for (int i = a.length() - 1; i >= 0; i--) {
             newA = newA + arrA[i];
         }
-        if (newA == b) {
+        if (newA.equals(b)) {
             return true;
         }
         else return false;
@@ -25,7 +25,7 @@ public class Strings {
             if (source.indexOf(search) >= 0) {
                 int startSearch = source.indexOf(search);
                 int endSearch = source.indexOf(search) + search.length();
-                newWord = source.substring(0, startSearch - 1) + replace + source.substring(endSearch, source.length());
+                newWord = source.substring(0, startSearch) + replace + source.substring(endSearch, source.length());
             }
             else {
                 newWord = source;

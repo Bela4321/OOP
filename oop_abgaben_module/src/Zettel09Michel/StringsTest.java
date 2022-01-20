@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StringsTest {
-/*
+
     @Test
     void isReverse() {
         assertTrue(Strings.isReverse("MICHEL", "LEHCIM") == true);
@@ -15,7 +15,7 @@ class StringsTest {
         assertTrue(Strings.isReverse("FRANZI", "FZNARI") == false);
         assertTrue(Strings.isReverse("BELA", "BELA") == false);
     }
-*/
+
     private void assertEquals(String reverse) {
     } // diese Methode braucht IntelliJ, um Testen zu können. Warum?
     // Es kommt Fehler: assertEquals(boolean) in StringsTest cannot be applied to '(java.lang.String)'
