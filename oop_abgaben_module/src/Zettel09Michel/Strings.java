@@ -10,7 +10,7 @@ public class Strings {
         b.toUpperCase();
         char[] arrA = a.toCharArray();
         String newA = "";
-        for (int i = a.length(); i > 1; i--) {
+        for (int i = a.length() - 1; i >= 0; i--) {
             newA = newA + arrA[i];
         }
         if (newA == b) {
