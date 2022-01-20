@@ -1,45 +1,49 @@
 package Zettel09Michel;
 
-public class GoodsSegment extends GoodsCrate {
+import java.util.Arrays;
+
+public class GoodsSegment {
     public double heightS;
     public double widthS;
     public double depthS;
     public double weightS;
-    public int[] segmentArr = new int[9];
+    public GoodsCrate[]segmentArr;
 
-    public GoodsSegment(double heightC, double widthC, double depthC, double weightC) { // hier hat IntelliJ einen komischen Konstruktor gebaut.
-        super(heightC, widthC, depthC, weightC);
+    public GoodsSegment(double heightS, double widthS, double depthS, double weightS) {
         this.heightS = heightS;
         this.widthS = widthS;
         this.depthS = depthS;
         this.weightS = weightS;
-        this.segmentArr = segmentArr; // braucht es das Array hier?
+        this.segmentArr = new GoodsCrate[9]; // braucht es das Array hier?
     }
 
-    void addCrate(GoodsCrate crate) { //Kiste in ein freies Fach einlagern (mit Drehung und max. Gewicht)
-        int crateX = 1; // Wie muss die Var. genutzt werden, wenn es für immer neue crates funktionieren soll?
-        // muss noch rein: if segmentArr[i] = 0 (weil default Wert), dann einlagern && alle weightC in segmentArr + weightC <= weightS
-        for (int i = 0; i < segmentArr.length; i++) {
-            if (heightC <= heightS / 3 && widthC <= widthS / 3 && depthC <= depthS / 3 && weightC <= weightS) {
-                segmentArr[i] = crateX;
-                return;
-            } else if (widthC <= heightS / 3 && heightC <= widthS / 3 && depthC <= depthS / 3 && weightC <= weightS) {
-                segmentArr[i] = crateX;
-                return;
-            } else if (widthC <= heightS / 3 && depthC <= widthS / 3 && heightC <= depthS / 3 && weightC <= weightS) {
-                segmentArr[i] = crateX;
-                return;
-            } else if (depthC <= heightS / 3 && heightC <= widthS / 3 && widthC <= depthS / 3 && weightC <= weightS) {
-                segmentArr[i] = crateX;
-                return;
-            } else {
-                System.out.println("Crate does not fit into this segment.");
+// Nach Belas Mehtode: Array für den Fit der Maße von Crate und Segment + Sortierung aufsteigend
+    public boolean FitCrate (GoodsCrate crate) {
+        double[] arrS = {heightS/3, widthS/3, depthS/3};
+        double[] arrC = {crate.heightC, crate.widthC, crate.depthC};
+        Arrays.sort(arrS);
+        Arrays.sort(arrC);
+        for (int i = 0; i < arrS.length; i++) {
+            if(arrC[i] > arrS[i]) {
+                return false;
             }
         }
-        /* alles mit nested for-loops und zweidimensionalem Array? testen?
-            for (int j = 0; j < segmentArr.length; j++) {
-                for (int k = 0; k < segmentArr.length; k++) {
-                        */
+        if(crate.weightC > weightS) {
+            return false;
+        }
+        return true;
+    }
+
+    public void addCrate(GoodsCrate crate) {
+        if (FitCrate(crate) == false) {
+            System.out.println("Crate does not fit into this segment.");
+        }
+        for (GoodsCrate i: segmentArr) {
+            if(FitCrate(crate) == true) {
+                i = crate;
+                return;
+            }
+        }
     }
 }
 /*

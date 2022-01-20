@@ -2,7 +2,7 @@ package Zettel09Franzi;
 
 import Zettel9.GoodsSegment;
 
-public class GoodShelfSystem {
+public class GoodShelfSystem {}
     /*GoodSegment[] segments;
 
     GoodShelfSystem(GoodSegment[] segment) {
@@ -14,4 +14,4 @@ public class GoodShelfSystem {
         }
     }
 
-}
+}*/
