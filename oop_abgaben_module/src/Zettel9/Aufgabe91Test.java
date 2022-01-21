@@ -1,5 +1,6 @@
-package Zettel09Franzi;
+package Zettel9;
 
+import Zettel09Franzi.Aufgabe91;
 import org.junit.jupiter.api.Test;
 
 import javax.xml.namespace.QName;
@@ -15,8 +16,8 @@ class Aufgabe91Test {
         String b2 = "negromsib";
         String a3 = "BisMorgen";
         String b3 = "negroMsiB";
-        assertEquals(Aufgabe91.isReverse(a1, b1), false);
-        assertEquals(Aufgabe91.isReverse(a2, b2), false);
+        assertEquals(Zettel09Franzi.Aufgabe91.isReverse(a1, b1), false);
+        assertEquals(Zettel09Franzi.Aufgabe91.isReverse(a2, b2), false);
         assertEquals(Aufgabe91.isReverse(a3, b3), true);
 
 
