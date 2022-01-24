@@ -13,4 +13,8 @@ public class Aufgabe91 {
             return true;
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println(isReverse("HAllo", "ollAH"));
+    }
 }

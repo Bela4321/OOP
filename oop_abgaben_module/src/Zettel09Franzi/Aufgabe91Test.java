@@ -2,9 +2,7 @@ package Zettel09Franzi;
 
 import org.junit.jupiter.api.Test;
 
-import javax.xml.namespace.QName;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Aufgabe91Test {
     @Test
