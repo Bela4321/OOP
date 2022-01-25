@@ -14,7 +14,7 @@ public abstract class GenericAutomaton {
     }
 
     public abstract void reset();
-    public abstract void isAccepting();
+    public abstract boolean isAccepting();
 
     public void addState(State state, boolean isStart) throws StateAlreadyExists{
         State[]  newStates = new State[states.length+1]; //muss erstmal ein neues Array anlegen wo alle zustände drin sind, um dann noch eventuell eins anzufügen

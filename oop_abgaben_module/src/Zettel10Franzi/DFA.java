@@ -12,13 +12,13 @@ public class DFA extends GenericAutomaton{
         this.current = super.start;
     }
 
-    /*public boolean isAccepting(){
+    public boolean isAccepting(){
         if (current == null){
             current = super.start;
         }
         return super.findState(current).accepted;
     }
-     */
+
 
     public void makeTransition( String q1, String q2, Character symbol) throws SymbolNotInAlphabet, StateDoesNotExist, TransitionAlreadyExists{
         for (Transition transition : transitions) {
