@@ -22,10 +22,10 @@ class StringsTest {
 
 
     @Test
-    void replace() {
+    void replace() { // Muss noch ein String als Ergebnis zum Vergleichen haben: Siehe andere Tests!
         assertEquals(Strings.replace("Hi it's Michel.", "Michel", "Franzi"));
-        assertEquals(Strings.replace("We are going now.", "we","you")); // klappt es auch bei Unterschied Buchstaben?
-        assertEquals(Strings.replace("We are going now", "now", "then")); // klappt es am Ende?
-        assertEquals(Strings.replace("We are going now", "We", "You")); // klappt es am Anfang?
+        assertEquals(Strings.replace("We are going now.", "we","you"));
+        assertEquals(Strings.replace("We are going now", "now", "then"));
+        assertEquals(Strings.replace("We are going now", "We", "You"));
     }
 }

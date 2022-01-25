@@ -16,6 +16,7 @@ public class GoodsSegment {
         this.compartments = new GoodsCrate[9];
     }
 
+
     public boolean fitsCrate(GoodsCrate crate) {
         if (this.getWeight()+crate.WEIGHT>this.MAX_WEIGHT) {
             return false;
@@ -63,5 +64,10 @@ public class GoodsSegment {
         return count;
     }
 
-
+    public static void main(String[] args) {
+        GoodsSegment newSegment = new GoodsSegment(1.0,2.0,3.0,4.0);
+        GoodsCrate newCrate = new GoodsCrate(0.5,0.5,0.5,1.0);
+        newSegment.addCrate(newCrate);
+        System.out.println(newCrate.toString());
+    }
 }
