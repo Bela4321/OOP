@@ -9,7 +9,7 @@ public class Alphabet {
 
     public boolean symbolInArr(Character symbol) {
         for (int i = 0; i < symbolArr.length; i++) {
-            if (symbol == symbolArr[i]) {
+            if (symbol.equals(symbolArr[i])) {
                 return true;
             }
         }

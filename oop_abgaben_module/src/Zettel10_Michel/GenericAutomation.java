@@ -47,7 +47,7 @@ public abstract class GenericAutomation <states, transitions, alphabet, start> {
         if (findState(transition.idEnd) == null) {
             throw new StateDoesNotExist(transition.idEnd);
         }
-        if (!this.alphabet.contains(transition.symbol1)) {
+        if (!this.alphabet.symbolInArr(transition.symbol1)) {
             throw new SymbolNotInAlphabet(transition.symbol1);
         }
         Transition[] newTransitions = new Transition[transitions.length + 1];

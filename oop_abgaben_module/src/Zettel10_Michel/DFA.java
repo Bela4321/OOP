@@ -22,7 +22,7 @@ public class DFA extends GenericAutomation {
 
         for (int i = 0; i < super.transitions.length; i++) {
             if (q1.equals(transitions[i].idStart) && Transition.symbol1 == symbol) {
-                throw new TransitionAlreadyExists (transition);
+                throw new TransitionAlreadyExists (transitions[i]);
             }
         }
         super.addTransition(new Transition(q1, q2, symbol));
