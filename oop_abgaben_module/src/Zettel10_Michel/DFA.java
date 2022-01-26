@@ -1,41 +1,45 @@
 package Zettel10_Michel;
 
 public class DFA extends GenericAutomation {
-    public String current;
+    protected String current;
 
-    DFA(String current, State[] states, Transition[] transitions, Alphabet[] alphabet, String start) {
-        super(states, transitions, alphabet, start);
-        this.current = current;
+    public DFA(Alphabet alphabet) {
+        super(alphabet);
     }
 
-    @Override
-    public void reset() {
-        current = start;
+    public void reset () {
+        this.current = super.start;
     }
 
-    @Override
     public boolean isAccepting() {
-        for (int i = 0; i < alphabet.length; i++) {
-            if (current.equals(alphabet[i])) {
-                return true;
-            }
+        if (current == null) {
+            current = super.start;
         }
-        return false;
+        return super.findState(current).goOn;
     }
 
-    public void makeTransition(String q1, String q2, Character symbol) throws TransitionAlreadyExists {
-        addTransition(Transition(q1, q2, symbol)); // idk!!
-        for (int i = 0; i < transitions.length; i++) {
-            if (q1.equals(Transition.idStart)) {
-                throw new TransitionAlreadyExists ();
+    public void makeTransition(String q1, String q2, Character symbol) throws TransitionAlreadyExists, StateDoesNotExist, SymbolNotInAlphabet {
+
+        for (int i = 0; i < super.transitions.length; i++) {
+            if (q1.equals(transitions[i].idStart) && Transition.symbol1 == symbol) {
+                throw new TransitionAlreadyExists (transition);
             }
         }
+        super.addTransition(new Transition(q1, q2, symbol));
     }
 
-    public String delta(Charactar symbol) {
-        for (String current : transitions) {
-// hier hänge ich mich morgen noch ran !"!!
+
+    public String delta(Character symbol) {
+        if(current == null) {
+            current = super.start;
         }
-        return current;
+        for (Transition transition : super.transitions) {
+            if (transition.idStart.equals(current) && transition.symbol1.equals((symbol))) {
+                current = transition.idEnd;
+                return current;
+            }
+        }
+        return null;
     }
 }
+

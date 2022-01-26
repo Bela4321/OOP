@@ -1,8 +1,10 @@
 package Zettel10_Michel;
 
 public class TransitionAlreadyExists extends Exception {
-    public void TransitionAlreadyExists (String message) {
-        message = "This transaction already exists";
-        System.out.println(message);
+    private Transition transition;
+
+    public TransitionAlreadyExists (Transition transition) {
+        super("This transition from " +Transition.idStart + " to " + Transition.idEnd + " does already exists.");
+        this.transition = transition;
     }
 }

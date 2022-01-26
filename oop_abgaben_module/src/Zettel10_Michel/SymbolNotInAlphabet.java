@@ -1,9 +1,10 @@
 package Zettel10_Michel;
 
 public class SymbolNotInAlphabet extends Exception {
+    private Character symbol;
 
-    public void SymbolNotInAlphabet (String message) {
-        message = "The Symbol is not part of Alphabet";
-        System.out.println(message);
+    public SymbolNotInAlphabet (Character symbol) {
+        super("The Symbol " + symbol + " is not part of Alphabet");
+        this.symbol = symbol;
     }
 }

@@ -1,18 +1,18 @@
 package Zettel10_Michel;
 
 public class Alphabet {
-    private Character[] symbolArr;
+    protected Character[] symbolArr;
 
-    Alphabet(){
+    public Alphabet(Character[] symbols){
         this.symbolArr = symbolArr;
     }
 
-    public Character symbolInArr(Character a) {
+    public boolean symbolInArr(Character symbol) {
         for (int i = 0; i < symbolArr.length; i++) {
-            if (a == symbolArr[i]) {
-                return a;
+            if (symbol == symbolArr[i]) {
+                return true;
             }
         }
-        return null;
+        return false;
     }
 }

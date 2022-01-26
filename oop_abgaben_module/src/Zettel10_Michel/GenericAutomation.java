@@ -2,36 +2,38 @@ package Zettel10_Michel;
 
 
 public abstract class GenericAutomation <states, transitions, alphabet, start> {
-    public State[] states;
-    public Transition[] transitions;
-    public Alphabet[] alphabet;
-    public String start;
+    protected State[] states;
+    protected Transition[] transitions;
+    protected Alphabet alphabet;
+    protected String start;
 
-    GenericAutomation(State[] states, Transition[] transitions, Alphabet[] alphabet, String start) {
-        this.states = states;
-        this.transitions = transitions;
+    GenericAutomation(Alphabet alphabet) {
+        this.states = new State[0];
+        this.transitions = new Transition[0];
         this.alphabet = alphabet;
-        this.start = start;
-        //  Legen Sie einen Konstruktor an, welchem ein
-        //Alphabet übergeben wird, der alle notwendigen Felder mit Default-Werten initialisiert.
+        this.start = null;
     }
-
     public abstract void reset();
-
     public abstract boolean isAccepting();
 
     public void addState(State state, boolean isStart) throws StateAlreadyExists {
-        if (state.equals(state.idState)) {
-            throw new StateAlreadyExists("State already exists.");
+        State[] newStates = new State[states.length + 1];
+        for (int i = 0; i < states.length; i++) {
+            newStates[i] = states[i];
+            if (states[i].idState.equals(state.idState)) {
+                throw new StateAlreadyExists(state);
+            }
         }
-        if (isStart == true) {
-            start = state.idState;
-        }
+        newStates[states.length] = state;
+        this.states = newStates;
+            if (isStart) {
+                start = state.idState;
+            }
     }
 
     public State findState(String id) {
         for (int i = 0; i < states.length; i++) {
-            if (id.equals(State.idState)) { // wieso kann er hier nicht zugreifen?
+            if (states[i].idState.equals(id)) {
                 return states[i];
             }
         }
@@ -39,18 +41,20 @@ public abstract class GenericAutomation <states, transitions, alphabet, start> {
     }
 
     protected void addTransition(Transition transition) throws StateDoesNotExist, SymbolNotInAlphabet {
-        for (int i = 0; i < transitions.length; i++) { // geht die Schleife überhaupt über alle Felder rüber?
-            //oder muss man schleifen für jeden Feld schreiben? Ja, oder?
-            if (transitions[i] == null) {
-                transition = transitions[i];
-            }
-            if (!transitions[i].equals(Transition.idEnd) || (transitions[i].equals(Transition.idStart))) {
-                throw new StateDoesNotExist ("The state idEnd or idStart do not exist");// hier braucht es die Nachricht, unten nicht.
-            }
-            if (!transitions[i].equals(Transition.symbol1)) {
-                throw new SymbolNotInAlphabet (); // wieso geht es hier nicht?
-            }
+        if (findState(transition.idStart) == null) {
+            throw new StateDoesNotExist(transition.idStart);
         }
-
+        if (findState(transition.idEnd) == null) {
+            throw new StateDoesNotExist(transition.idEnd);
+        }
+        if (!this.alphabet.contains(transition.symbol1)) {
+            throw new SymbolNotInAlphabet(transition.symbol1);
+        }
+        Transition[] newTransitions = new Transition[transitions.length + 1];
+        for (int i = 0; i < transitions.length; i++) {
+            newTransitions[i] = transitions[i];
+        }
+        newTransitions[transitions.length] = transition;
+        transitions = newTransitions;
     }
 }
