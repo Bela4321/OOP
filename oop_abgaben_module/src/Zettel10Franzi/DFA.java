@@ -29,7 +29,7 @@ public class DFA extends GenericAutomaton{
             super.addTransition(new Transition(q1, q2,symbol));
 
     }
-    //Warum geht das so?:
+
     public  String delta (Character symbol){
         for (Transition transition : super.transitions) {
             if (transition.startID.equals(current)&&transition.symbol.equals(symbol)){
@@ -39,7 +39,7 @@ public class DFA extends GenericAutomaton{
         }
         return null;
     }
-    }
+
 
 
 }
