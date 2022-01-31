@@ -1,0 +1,33 @@
+a) Fügt einen Double und einen Integer in die Liste l ein. 1
+1 void listOperationsA(List<? super Number> l) {
+2 l.add(new Double(3.14));
+3 l.add(new Integer(42));
+4 }
+//Double und Integer erben beide von Number, deshalb kann die Wildcard so verwendet werden.
+
+
+b) Gibt alle Elemente in der Liste auf der Konsole aus. 1
+1 void listOperationsB(List<?> l) {
+2 for(int i = 0; i < l.size(); i++){
+3 System.out.println(l.get(i));
+4 }
+5 }
+//Da jedes Objekt geprintet werden kann gibt es hier keine Einschränkung.
+
+
+c) Vergleicht das erste und zweite Element in der Liste und gibt das Ergebnis zurück. 1
+1 int listOperationsC(List<? extends Comparable> l) {
+2 return l.get(0).compareTo(l.get(1));
+3 }
+// .compareTo wird von allen Objekten die das Interface Comparable implementieren, implementiert.
+// Deshalb muss der Typ von Elementen aus l auch davon erben
+
+
+d) Entfernt das erste Element aus der Liste und hängt es am Ende an. 1
+1 void listOperationsD(List<Integer> l) {
+2 Integer i = l.get(0);
+3 l.remove(i);
+4 l.add(i);
+5 }
+// In Zeile 2 sieht man, dass der Listentyp Integer oder eine Unterklasse von Integer sein muss.
+// In Zeile 4 sieht man, dass der Listentyp Integer oder eine Oberklasse von Integer sein muss: Listentyp muss Integer sein( kein Wildcard Typ möglich)

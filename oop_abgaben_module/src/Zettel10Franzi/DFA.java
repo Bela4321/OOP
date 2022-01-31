@@ -39,7 +39,6 @@ public class DFA extends GenericAutomaton{
         }
         return null;
     }
-    }
 
 
 }
