@@ -2,7 +2,7 @@ package Zettel08;
 
 
 
-public class HexaDecimal implements Number{
+public class HexaDecimal implements Numbers {
     private String ValueInHex;
 
     public String toString() {
