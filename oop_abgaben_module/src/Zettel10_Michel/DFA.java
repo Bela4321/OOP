@@ -1,4 +1,4 @@
-package Zettel10_Michel;
+/*package Zettel10_Michel;
 
 public class DFA extends GenericAutomation {
     protected String current;
@@ -42,4 +42,4 @@ public class DFA extends GenericAutomation {
         return null;
     }
 }
-
+*/

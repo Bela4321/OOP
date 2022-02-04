@@ -1,4 +1,4 @@
-package Zettel10_Michel;
+/*package Zettel10_Michel;
 
 
 public abstract class GenericAutomation <states, transitions, alphabet, start> {
@@ -58,3 +58,4 @@ public abstract class GenericAutomation <states, transitions, alphabet, start> {
         transitions = newTransitions;
     }
 }
+*/
