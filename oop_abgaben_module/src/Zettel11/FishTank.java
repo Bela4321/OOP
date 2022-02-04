@@ -18,7 +18,7 @@ public class FishTank {
         }
     }
 
-    <T> List<T> filter(T creature) {
+    <T extends Seacreature> List<T> filter(T creature) {
         List<T> filteredList= new ArrayList();
         for(Seacreature creatureInFishTank : this.creatures) {
             if (creature instanceof T) {
