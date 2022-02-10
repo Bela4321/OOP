@@ -16,7 +16,7 @@ public class Lambda {
 
     public static <T> String listToString(ArrayList<T>list) {
         StringBuilder result = new StringBuilder();
-        Consumer stringAdder= x -> result.append(x.toString());
+        Consumer stringAdder= x -> result.append(x.toString()+"\n");
         list.forEach(stringAdder);
 
         return result.toString();
