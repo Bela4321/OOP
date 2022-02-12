@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class IOStreams {
     public static Stream<String> words(String filePath) throws FileNotFoundException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
-        Stream<String> result = bufferedReader.lines().map(x -> x.split("\\W+")).flatMap(x -> Arrays.stream(x)).filter(x -> !x.equals(""));
+        Stream<String> result = bufferedReader.lines().map(x->x.replaceAll("[”;!?—’-]","")).map(x -> x.split("\\W+")).flatMap(x -> Arrays.stream(x)).filter(x -> !x.equals(""));
         return result;
     }
 
