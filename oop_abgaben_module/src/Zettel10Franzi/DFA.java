@@ -1,3 +1,4 @@
+/*
 package Zettel10Franzi;
 
 
@@ -42,4 +43,4 @@ public class DFA extends GenericAutomaton{
     }
 
 
-
+}*/
