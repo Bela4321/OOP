@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IOStreamsTest {
-    //compare the two text files, needs to ececute IOStreams.main() first
+    //compare the two text files, needs to execute IOStreams.main() first
 
     @Test
     void filecompartor() throws FileNotFoundException {
