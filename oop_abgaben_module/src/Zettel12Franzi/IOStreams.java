@@ -14,7 +14,7 @@ public class IOStreams {
     }
 
     public static Map<String, Integer> countWords(Stream<String> words){
-        HashMap<String, Integer> wordCount = new HashMap<>();
+        Map<String, Integer> wordCount = new HashMap<>();
         words.map(x -> x.split(" ")).flatMap(x -> Arrays.stream(x)).forEach(x -> { if(wordCount.containsKey(x) == true){
                                 wordCount.put(x, wordCount.get(x) + 1);
                             } else { wordCount.put(x, 1);
