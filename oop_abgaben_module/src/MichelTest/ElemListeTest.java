@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ElemListeTest {
     @Test
     public void testElem(){
-        Assertions.
+        //Assertions.
     }
 
 }

@@ -1,6 +1,6 @@
 package Zettel10;
 
-public class SymbolNotInAlphabet extends Exception{
+class SymbolNotInAlphabet extends Exception{
     private char symbol;
 
     public SymbolNotInAlphabet(char symbol) {

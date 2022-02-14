@@ -1,6 +1,6 @@
 package Zettel10;
 
-public class Alphabet {
+class Alphabet {
     protected Character[] symbols;
 
     public Alphabet(Character[] symbols) {

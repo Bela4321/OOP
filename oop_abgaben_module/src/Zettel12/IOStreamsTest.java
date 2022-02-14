@@ -24,5 +24,4 @@ class IOStreamsTest {
 
         assertEquals(expectedLines,resultLines);
     }
-
 }
