@@ -1,4 +1,4 @@
-/* package Zettel12Michel;
+package Zettel12Michel;
 
 import java.io.*;
 import java.util.HashMap;
@@ -26,11 +26,10 @@ public class IOStreams {
 
     public static void writeCountedWords(Map<String, Integer> countedWords, String filepath) throws IOException {
         try {
-        (BufferedWriter writer = new BufferedWriter(new FileWriter(filepath)));
+         BufferedWriter writer = new BufferedWriter(new FileWriter(filepath));
 
         } catch (Exception e) {
             return;
         }
+    }
 }
-
-*/

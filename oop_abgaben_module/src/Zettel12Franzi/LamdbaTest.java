@@ -36,11 +36,11 @@ class LamdbaTest {
     void sortBy(){
         ArrayList<Integer> list1 = new ArrayList<>(List.of(1, 33, 22, 57, 5, 8, 13, 68, 45, 10));
         ArrayList<String> list2 = new ArrayList<>(List.of("Hi", "Wie", "Geht", "es", "euch", "so", "das ist ein", "cooler", "test", "yeaahh"));
-        //ArrayList<Objects> list3 = new ArrayList(List.of(1, "Hi", 'c', 57, "gut", 8, "und", 'd', "so", 10));
+        ArrayList<Objects> list3 = new ArrayList(List.of(1, "Hi", 'c', 57, "gut", 8, "und", 'd', "so", 10));
 
         Comparator <Integer> comparator1 = (c,d)-> (Math.abs(c)-Math.abs(d));
         Comparator <String> comparator2 = (e, f) -> (e.length() - f.length());
-        //Comparator <Objects> comparator3 = (g,h) -> Integer.ValueOf(g) - Integer.ValueOf(h);
+        //Comparator <Objects> comparator3 = (g,h) -> g.toString()  h.toString();
 
         Lamdba.sortBy(list1,comparator1);
         Lamdba.sortBy(list2, comparator2);
