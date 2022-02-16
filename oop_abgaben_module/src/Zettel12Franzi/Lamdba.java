@@ -1,5 +1,7 @@
 package Zettel12Franzi;
 
+import Zettel12.Lambda;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -22,6 +24,12 @@ public class Lamdba {
         list.forEach(strings);
         return result.toString();
 
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Objects> list3 = new ArrayList(List.of(1, "Hi", 'c', 57, "gut", 8, "und", 'd', "so", 10));
+        listToString(list3);
+        System.out.println(list3);
     }
 
 

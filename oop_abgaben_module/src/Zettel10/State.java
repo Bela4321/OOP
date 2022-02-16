@@ -1,6 +1,6 @@
 package Zettel10;
 
-public class State {
+class State {
     protected String ID;
     protected boolean accepted;
 

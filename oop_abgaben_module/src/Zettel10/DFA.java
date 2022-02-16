@@ -1,6 +1,6 @@
 package Zettel10;
 
-public class DFA extends GenericAutomaton {
+class DFA extends GenericAutomaton {
     private String current;
 
     public DFA(Alphabet alphabet) {

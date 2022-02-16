@@ -1,6 +1,6 @@
 package Zettel10;
 
-public class Transition {
+class Transition {
     protected String startID;
     protected String endID;
     protected Character symbol;

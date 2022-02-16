@@ -1,6 +1,6 @@
 package Zettel10;
 
-public class StateAlreadyExists extends Exception{
+class StateAlreadyExists extends Exception{
     private State state;
 
     public StateAlreadyExists(State state) {

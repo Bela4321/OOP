@@ -1,6 +1,6 @@
 package Zettel10;
 
-public class StateDoesNotExist extends Exception{
+class StateDoesNotExist extends Exception{
     private String stateID;
 
     public StateDoesNotExist(String stateID) {

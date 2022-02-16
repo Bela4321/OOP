@@ -1,8 +1,7 @@
-package Zettel12;
+package Zettel12Michel;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -15,12 +14,12 @@ public class Lambda {
         list.sort(comparator);
     }
 
-    public static <T> String listToString(ArrayList<T>list) {
-        StringBuilder result = new StringBuilder();
-        Consumer stringAdder= x -> result.append(x.toString()+"\n");
-        list.forEach(stringAdder);
-
-        return result.toString();
+    public static <T> String listToString(ArrayList<T> list) {
+        StringBuilder str = new StringBuilder();
+        Consumer addingStr = x -> str.append(x.toString() + "\n");
+        list.forEach(addingStr);
+        return str.toString();
     }
-
 }
+
+// + JUnit Tests schreiben

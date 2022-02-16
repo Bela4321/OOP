@@ -1,7 +1,7 @@
 package Zettel10;
 
 
-public abstract class GenericAutomaton {
+abstract class GenericAutomaton {
     protected State[] states;
     protected Transition[] transitions;
     protected Alphabet alphabet;

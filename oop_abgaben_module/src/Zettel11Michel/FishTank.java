@@ -11,7 +11,7 @@ public class FishTank {
         this.creatures = new ArrayList<Seacreature>(); // Wieso sind Belas ArrayList nicht für Seacreature?
     }
 
-    public void addCreature (Seacreature addedCreature) throws NoLeviathanAllowedException {
+    public void addCreature (int index, Seacreature addedCreature) throws NoLeviathanAllowedException {
         if (addedCreature instanceof Leviathan) {
             throw new NoLeviathanAllowedException();
         } else {
@@ -24,7 +24,7 @@ public class FishTank {
         for (Seacreature searched: creatures) {
             if (creature instanceof T) {
                 System.out.println(searched);
-                search.add(creature);
+                search.add(creature); // muss auf Objekt ausgeführt werden, weil nicht static!!!
             }
         }
         /*List<T> search = Arrays.asList(); // funktioniert das auch?
@@ -32,7 +32,5 @@ public class FishTank {
         */
         return search;
     }
-
-
 }
 

@@ -1,6 +1,6 @@
 package Zettel10;
 
-public class TransitionAlreadyExists extends Exception{
+class TransitionAlreadyExists extends Exception{
     private Transition transition;
 
     public TransitionAlreadyExists(Transition transition) {
